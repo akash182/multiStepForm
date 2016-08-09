@@ -19,17 +19,22 @@
 		margin-left: auto;
 		margin-right : auto;
 	}
-	
+.disabled {
+    color: #AAAAAA;
+    cursor: default;
+    pointer-events: none;
+    text-decoration: none;
+}
 </style>
 </head>
 <body ng-app="app">
-	<div class="container-fluid">
+	<div class="container-fluid" ng-controller="tabCtrl">
 	<nav>
 	
-	<div ng-controller="tabCtrl">
+	<div >
       <ul class="nav nav-pills">
         <li ng-repeat="tab in tabs">
-    	        <a href="{{tab.url}}">
+    	        <a href="{{tab.url}}" ng-class="{disabled: tab.disabled===true}">
     	    	    {{tab.title}}
     	        </a>
     	   </li>

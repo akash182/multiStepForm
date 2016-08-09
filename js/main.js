@@ -1,28 +1,37 @@
 (function(){
       angular.module('app',['ngRoute'])
       
-.controller("ReviewController", function(){
-    	  
-    		  
-      })
+
       .controller('tabCtrl',function($scope){
+         
+
          $scope.tabs=[
              {'title' : 'Stage1',
-             'url' : '#Stage1'
+             'url' : '#Stage1',
+             'disabled' : false
          },
          {'title' : 'Stage2',
-             'url' : '#Stage2'
+             'url' : '#Stage2',
+             'disabled' : true
          },
          {'title' : 'Stage3',
-             'url' : '#Stage3'
+             'url' : '#Stage3',
+             'disabled' : true
          },
          {'title' : 'Stage4',
-             'url' : '#Stage4'
+             'url' : '#Stage4',
+             'disabled' : true
          },
          {'title' : 'Stage5',
-             'url' : '#Stage5'
-         }] 
-      })
+             'url' : '#Stage5',
+             'disabled' : true
+         }] ;
+        
+          $scope.addReview = function(pageNumber){
+              var pn=pageNumber;
+    	     $scope.tabs[pn].disabled=false;
+          };
+                })
       .config(function($routeProvider) {
         $routeProvider
 

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<!-- HTML5 Hello world by kirupa - http://www.kirupa.com/html5/getting_your_feet_wet_html5_pg1.htm -->
+<html lang="en-us">
+
+<head>
+<meta charset="utf-8">
+<title>Hello...</title>
+<link rel="stylesheet" href="css/bootstrap.css" type="text/css" />
+<link rel="stylesheet" href="css/validation.css" type="text/css" />
+<script type="text/javascript" src="js/angular.min.js"></script>
+<script type="text/javascript" src="js/angular-route.min.js"></script>
+<script src="js/main.js"> </script>
+<style type="text/css">
+	.container-fluid{
+		margin-top : 50px;
+		padding : 50px 50px 50px 50px;
+		border : 2px solid;
+		width : 30%;
+		margin-left: auto;
+		margin-right : auto;
+	}
+	
+</style>
+</head>
+<body ng-app="app">
+	<div class="container-fluid">
+	<nav>
+	
+	<div ng-controller="tabCtrl">
+      <ul class="nav nav-pills">
+        <li ng-repeat="tab in tabs">
+    	        <a href="{{tab.url}}">
+    	    	    {{tab.title}}
+    	        </a>
+    	   </li>
+      </ul>
+   </nav>
+   <div ng-view></div>
+</body>
+</html>
